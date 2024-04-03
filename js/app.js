@@ -5,7 +5,8 @@ const { createApp } = Vue
       return {
         currentIndex: 0,
         newMessage: null,
-        searchContact: null,
+        searchNameContact: '',
+        contactsFilter: [],
         contacts: [
           {
             name: "Michele",
@@ -204,6 +205,26 @@ const { createApp } = Vue
         };
 
         this.contacts[this.currentIndex].messages.push(newMsg);
+      },
+      searchContact() {
+        const contactsFilter = this.contacts.filter(contact => {
+          return contact.name.includes(this.searchNameContact);
+        });
+
+        this.contactsFilter = contactsFilter;
       }
+      // searchContact(){
+      //   this.contacts.map(element, i => {
+      //     const name = element.name;
+      //     const newArrayName = [];
+      //     const nameSearc = contacts.name.indexOf(searchNameContact)
+      //     if(nameSearc !== -1){
+      //       newArrayName.push(contacts[nameSearc]);
+      //     }
+      //     console.log(newArrayName)
+      //     console.log(nameSearc)
+      //     return newArrayName;
+      //   });
+      // }
     }
   }).mount('#app')

@@ -47,13 +47,25 @@
           <!-- SEARCH CONTACTS -->
           <div class="search-contacts">
             <div class="container-search-contacts">
-              <input v-model="searchContact" id="input-search" type="search" value="" placeholder="Cerca o inizia una chat">
+              <input v-model="searchNameContact" id="input-search" type="search" value="" placeholder="Cerca o inizia una chat" @keyup.enter="searchContact">
               <i class="search-icon fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
           <!-- UL CONTACTS -->
           <ul class="contacts">
-            <li v-for="(contact, i) in contacts" class="card" @click="saveIndex(i)">
+            <li v-if="contactsFilter.length === 0" v-for="(contact, i) in contacts" class="card" @click="saveIndex(i)">
+              <div class="card-contacts">
+                <img class="style-avatar" :src="contact.avatar" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">{{contact.name}}</div>
+                  <div class="text-contacts">Lorem ipsum</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+            <li v-else v-for="(contact, i) in contactsFilter" class="card" @click="saveIndex(i)">
               <div class="card-contacts">
                 <img class="style-avatar" :src="contact.avatar" alt="">
                 <div class=info-contacts>
