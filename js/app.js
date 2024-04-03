@@ -4,6 +4,7 @@ const { createApp } = Vue
     data() {
       return {
         currentIndex: null,
+        newMessage: null,
         contacts: [
           {
             name: "Michele",
@@ -181,6 +182,15 @@ const { createApp } = Vue
         else{
           return 'message-chat-received'
         }
+      },
+      sentMessage(){
+        const newMsg = {
+          date: "10/01/2020 15:51:00",
+          message: this.newMessage,
+          status: "sent",
+        };
+
+        const xxx = this.contacts[this.currentIndex].messages.push(newMsg);
       }
     }
   }).mount('#app')
