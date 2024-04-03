@@ -190,7 +190,7 @@ const { createApp } = Vue
           status: "sent",
         };
 
-        const xxx = this.contacts[this.currentIndex].messages.push(newMsg);
+        this.contacts[this.currentIndex].messages.push(newMsg);
       }
     }
   }).mount('#app')
