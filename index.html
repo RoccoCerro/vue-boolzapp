@@ -53,12 +53,12 @@
           </div>
           <!-- UL CONTACTS -->
           <ul class="contacts">
-            <li v-for="(contact) in contacts" class="card">
+            <li v-for="(contact, i) in contacts" class="card" @click="saveIndex(i)">
               <div class="card-contacts">
                 <img class="style-avatar" :src="contact.avatar" alt="">
                 <div class=info-contacts>
                   <div class="name-contacts">{{contact.name}}</div>
-                  <div class="text-contacts">{{contact.messages[0].message}}</div>
+                  <div class="text-contacts">Lorem ipsum</div>
                 </div>
               </div>
               <div class="hours">
@@ -183,20 +183,26 @@
           <!-- MAIN CHAT -->
           <div class="main-chat">
             <div class="container-chat">
-              <div class="container-message">
-                <div class="message-chat-sent">
-                  <!-- text message -->
+              <div v-for="(contact, index) in contacts" class="container-message" :class="currentIndex === index ? 'active' : ''">
+                <div v-for="(msg, i) in contact.messages" :class='sentOrReceived(index, i)'>
                   <div class="text-message">
+                    {{msg.message}}
+                  </div>
+                    
+                </div>
+                <!-- <div class="message-chat-sent"> -->
+                  <!-- text message -->
+                  <!-- <div class="text-message">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis cupiditate fugit, enim ab est
                       minus nulla iste, aperiam ducimus ipsa, perferendis ipsum! Totam, sequi.</p>
-                  </div>
+                  </div> -->
                   <!-- icon -->
-                  <div class="interact-message">
+                  <!-- <div class="interact-message">
                     <span class="material-symbols-outlined">
                       expand_more
                     </span>
                     <!-- curtain -->
-                    <div class="curtain">
+                    <!-- <div class="curtain">
                       <ul>
                         <li><a href="">Rispondi</a></li>
                         <li><a href="">Inoltra</a></li>
@@ -205,24 +211,24 @@
                         <li><a href="">Modifica</a></li>
                         <li><a href="">Elimina</a></li>
                       </ul>
-                    </div>
-                  </div>
+                    </div> -->
+                  <!-- </div> -->
                   <!-- hours message -->
-                  <div class="hours-message">17:30</div>
-                </div>
-                <div class="message-chat-received">
+                  <!-- <div class="hours-message">17:30</div> -->
+                <!-- </div> -->
+                <!-- <div class="message-chat-received"> -->
                   <!-- text message -->
-                  <div class="text-message">
+                  <!-- <div class="text-message">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis cupiditate fugit, enim ab est
                       minus nulla iste, aperiam ducimus ipsa, perferendis ipsum! Totam, sequi.</p>
-                  </div>
-                  <div class="interact-message">
+                  </div> -->
+                  <!-- <div class="interact-message"> -->
                     <!-- icon -->
-                    <span class="material-symbols-outlined">
+                    <!-- <span class="material-symbols-outlined">
                       expand_more
-                    </span>
+                    </span> -->
                     <!-- curtain -->
-                    <div class="curtain">
+                    <!-- <div class="curtain">
                       <ul>
                         <li><a href="">Rispondi</a></li>
                         <li><a href="">Inoltra</a></li>
@@ -231,14 +237,14 @@
                         <li><a href="">Modifica</a></li>
                         <li><a href="">Elimina</a></li>
                       </ul>
-                    </div>
-                  </div>
+                    </div> -->
+                  <!-- </div> -->
                   <!-- hours message -->
-                  <div class="hours-message">17:30</div>
-                </div>
+                  <!-- <div class="hours-message">17:30</div> -->
+                <!-- </div> -->
               </div>
             </div>
-          </div>
+          </div> 
           <!-- FOOTER CHAT -->
           <div class="footer-chat debug">
             <div id="emoji" class="icon-footer">

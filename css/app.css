@@ -200,12 +200,13 @@ img {
 .container-message {
     margin: 0 auto;
     max-width: 95%;
-    display: flex;
+    display: none;
     height: 100%;
     flex-direction: column;
     gap: 10px;
     overflow: auto;
     scrollbar-width: none;
+
 }
 
 .message-chat-sent, .message-chat-received {
@@ -333,6 +334,9 @@ img {
     font-size: 20px;
 }
 
+.active {
+    display: flex;
+}
 /* MEDIA QUERY */
 @media (min-width: 768px){
     .sidebar {
