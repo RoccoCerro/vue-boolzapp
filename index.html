@@ -87,8 +87,8 @@
           <!-- MAIN CHAT -->
           <div class="main-chat">
             <div class="container-chat">
-              <div v-for="(contact, index) in contacts" class="container-message" :class="currentIndex === index ? 'active' : ''">
-                <div v-for="(msg, i) in contact.messages" :class='sentOrReceived(index, i)'>
+              <div class="container-message" :class="currentIndex === currentIndex ? 'active' : ''">
+                <div v-for="(msg, i) in contacts[currentIndex].messages" :class='sentOrReceived(currentIndex, i)'>
                   <div class="text-message">
                     {{msg.message}}
                   </div>
