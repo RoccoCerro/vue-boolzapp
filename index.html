@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/app.css">
-  <title>Boolzapp</title>
+  <title>VueBoolzapp</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <script src="https://kit.fontawesome.com/1ac9a063d3.js" crossorigin="anonymous"></script>
@@ -16,230 +16,234 @@
 </head>
 
 <body class="debug">
-  <div class="app">
-    <div class="app-content">
-      <!-- SIDEBAR -->
-      <div class="sidebar">
-        <!-- HEADER SIDEBAR -->
-        <div class="header-sidebar">
-          <div class="box-avatar">
-            <img class="style-avatar" src="./img/avatar_io.jpg" alt="">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <div id="app">
+    <div class="app">
+      <div class="app-content">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+          <!-- HEADER SIDEBAR -->
+          <div class="header-sidebar">
+            <div class="box-avatar">
+              <img class="style-avatar" src="./img/avatar_io.jpg" alt="">
+            </div>
+            <div class="icon">
+              <a href=""><i class="style-icon fa-solid fa-circle-notch"></i></a>
+              <a href=""><i class="style-icon fa-solid fa-message"></i></a>
+              <a href=""><i class="style-icon fa-solid fa-ellipsis-vertical"></i></a>
+            </div>
           </div>
-          <div class="icon">
-            <a href=""><i class="style-icon fa-solid fa-circle-notch"></i></a>
-            <a href=""><i class="style-icon fa-solid fa-message"></i></a>
-            <a href=""><i class="style-icon fa-solid fa-ellipsis-vertical"></i></a>
+          <!-- NOTIFICATIONS -->
+          <div class="notifications-sidebar">
+            <div class="style-bell-icon icon-notifications">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <div class="text-notifications">
+              <div id="message-notifications">Ricevi notifiche di nuovi messaggi</div>
+              <a id="start-notifications" href="">Attiva notiche desktop</a>
+            </div>
           </div>
+          <!-- SEARCH CONTACTS -->
+          <div class="search-contacts">
+            <div class="container-search-contacts">
+              <input id="input-search" type="search" value="" placeholder="Cerca o inizia una chat">
+              <i class="search-icon fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+          <!-- UL CONTACTS -->
+          <ul class="contacts">
+            <li class="card">
+              <div class="card-contacts">
+                <img class="style-avatar" src="./img/avatar_1.jpg" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">Michele</div>
+                  <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-contacts">
+                <img class="style-avatar" src="./img/avatar_2.jpg" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">Fabio</div>
+                  <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-contacts">
+                <img class="style-avatar" src="./img/avatar_3.jpg" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">Samuele</div>
+                  <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-contacts">
+                <img class="style-avatar" src="./img/avatar_4.jpg" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">Alessandro B.</div>
+                  <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-contacts">
+                <img class="style-avatar" src="./img/avatar_5.jpg" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">Alessandro L.</div>
+                  <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-contacts">
+                <img class="style-avatar" src="./img/avatar_6.jpg" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">Claudia</div>
+                  <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-contacts">
+                <img class="style-avatar" src="./img/avatar_7.jpg" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">Federico</div>
+                  <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-contacts">
+                <img class="style-avatar" src="./img/avatar_8.jpg" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">Davide</div>
+                  <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                </div>
+              </div>
+              <div class="hours">
+                16:15
+              </div>
+            </li>
+          </ul>
         </div>
-        <!-- NOTIFICATIONS -->
-        <div class="notifications-sidebar">
-          <div class="style-bell-icon icon-notifications">
-            <i class="fa-solid fa-bell-slash"></i>
-          </div>
-          <div class="text-notifications">
-            <div id="message-notifications">Ricevi notifiche di nuovi messaggi</div>
-            <a id="start-notifications" href="">Attiva notiche desktop</a>
-          </div>
-        </div>
-        <!-- SEARCH CONTACTS -->
-        <div class="search-contacts">
-          <div class="container-search-contacts">
-            <input id="input-search" type="search" value="" placeholder="Cerca o inizia una chat">
-            <i class="search-icon fa-solid fa-magnifying-glass"></i>
-          </div>
-        </div>
-        <!-- UL CONTACTS -->
-        <ul class="contacts">
-          <li class="card">
-            <div class="card-contacts">
-              <img class="style-avatar" src="./img/avatar_1.jpg" alt="">
-              <div class=info-contacts>
-                <div class="name-contacts">Michele</div>
-                <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
-              </div>
-            </div>
-            <div class="hours">
-              16:15
-            </div>
-          </li>
-          <li class="card">
-            <div class="card-contacts">
-              <img class="style-avatar" src="./img/avatar_2.jpg" alt="">
-              <div class=info-contacts>
-                <div class="name-contacts">Fabio</div>
-                <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
-              </div>
-            </div>
-            <div class="hours">
-              16:15
-            </div>
-          </li>
-          <li class="card">
-            <div class="card-contacts">
-              <img class="style-avatar" src="./img/avatar_3.jpg" alt="">
-              <div class=info-contacts>
-                <div class="name-contacts">Samuele</div>
-                <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
-              </div>
-            </div>
-            <div class="hours">
-              16:15
-            </div>
-          </li>
-          <li class="card">
-            <div class="card-contacts">
-              <img class="style-avatar" src="./img/avatar_4.jpg" alt="">
-              <div class=info-contacts>
-                <div class="name-contacts">Alessandro B.</div>
-                <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
-              </div>
-            </div>
-            <div class="hours">
-              16:15
-            </div>
-          </li>
-          <li class="card">
-            <div class="card-contacts">
-              <img class="style-avatar" src="./img/avatar_5.jpg" alt="">
-              <div class=info-contacts>
-                <div class="name-contacts">Alessandro L.</div>
-                <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
-              </div>
-            </div>
-            <div class="hours">
-              16:15
-            </div>
-          </li>
-          <li class="card">
-            <div class="card-contacts">
+        <!-- CHAT OPEN -->
+        <div class="chat">
+          <!-- HEADER CHAT -->
+          <div class="header-chat">
+            <div class="card-chat">
               <img class="style-avatar" src="./img/avatar_6.jpg" alt="">
-              <div class=info-contacts>
+              <div class=info-chat>
                 <div class="name-contacts">Claudia</div>
-                <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
+                <div class="text-contacts">Ultimo accesso oggi alle 16:26</div>
               </div>
             </div>
-            <div class="hours">
-              16:15
-            </div>
-          </li>
-          <li class="card">
-            <div class="card-contacts">
-              <img class="style-avatar" src="./img/avatar_7.jpg" alt="">
-              <div class=info-contacts>
-                <div class="name-contacts">Federico</div>
-                <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
-              </div>
-            </div>
-            <div class="hours">
-              16:15
-            </div>
-          </li>
-          <li class="card">
-            <div class="card-contacts">
-              <img class="style-avatar" src="./img/avatar_8.jpg" alt="">
-              <div class=info-contacts>
-                <div class="name-contacts">Davide</div>
-                <div class="text-contacts">Lorem ipsum dolor sit amet.</div>
-              </div>
-            </div>
-            <div class="hours">
-              16:15
-            </div>
-          </li>
-        </ul>
-      </div>
-      <!-- CHAT OPEN -->
-      <div class="chat">
-        <!-- HEADER CHAT -->
-        <div class="header-chat">
-          <div class="card-chat">
-            <img class="style-avatar" src="./img/avatar_6.jpg" alt="">
-            <div class=info-chat>
-              <div class="name-contacts">Claudia</div>
-              <div class="text-contacts">Ultimo accesso oggi alle 16:26</div>
+            <div class="icon">
+              <a href=""><i class="style-icon fa-solid fa-magnifying-glass"></i></a>
+              <a href=""><i class="style-icon fa-solid fa-paperclip"></i></a>
+              <a href=""><i class="style-icon fa-solid fa-ellipsis-vertical"></i></a>
             </div>
           </div>
-          <div class="icon">
-            <a href=""><i class="style-icon fa-solid fa-magnifying-glass"></i></a>
-            <a href=""><i class="style-icon fa-solid fa-paperclip"></i></a>
-            <a href=""><i class="style-icon fa-solid fa-ellipsis-vertical"></i></a>
-          </div>
-        </div>
-        <!-- MAIN CHAT -->
-        <div class="main-chat">
-          <div class="container-chat">
-            <div class="container-message">
-              <div class="message-chat-sent">
-                <!-- text message -->
-                <div class="text-message">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis cupiditate fugit, enim ab est
-                    minus nulla iste, aperiam ducimus ipsa, perferendis ipsum! Totam, sequi.</p>
-                </div>
-                <!-- icon -->
-                <div class="interact-message">
-                  <span class="material-symbols-outlined">
-                    expand_more
-                  </span>
-                  <!-- curtain -->
-                  <div class="curtain">
-                    <ul>
-                      <li><a href="">Rispondi</a></li>
-                      <li><a href="">Inoltra</a></li>
-                      <li><a href="">Importante</a></li>
-                      <li><a href="">Copia</a></li>
-                      <li><a href="">Modifica</a></li>
-                      <li><a href="">Elimina</a></li>
-                    </ul>
+          <!-- MAIN CHAT -->
+          <div class="main-chat">
+            <div class="container-chat">
+              <div class="container-message">
+                <div class="message-chat-sent">
+                  <!-- text message -->
+                  <div class="text-message">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis cupiditate fugit, enim ab est
+                      minus nulla iste, aperiam ducimus ipsa, perferendis ipsum! Totam, sequi.</p>
                   </div>
-                </div>
-                <!-- hours message -->
-                <div class="hours-message">17:30</div>
-              </div>
-              <div class="message-chat-received">
-                <!-- text message -->
-                <div class="text-message">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis cupiditate fugit, enim ab est
-                    minus nulla iste, aperiam ducimus ipsa, perferendis ipsum! Totam, sequi.</p>
-                </div>
-                <div class="interact-message">
                   <!-- icon -->
-                  <span class="material-symbols-outlined">
-                    expand_more
-                  </span>
-                  <!-- curtain -->
-                  <div class="curtain">
-                    <ul>
-                      <li><a href="">Rispondi</a></li>
-                      <li><a href="">Inoltra</a></li>
-                      <li><a href="">Importante</a></li>
-                      <li><a href="">Copia</a></li>
-                      <li><a href="">Modifica</a></li>
-                      <li><a href="">Elimina</a></li>
-                    </ul>
+                  <div class="interact-message">
+                    <span class="material-symbols-outlined">
+                      expand_more
+                    </span>
+                    <!-- curtain -->
+                    <div class="curtain">
+                      <ul>
+                        <li><a href="">Rispondi</a></li>
+                        <li><a href="">Inoltra</a></li>
+                        <li><a href="">Importante</a></li>
+                        <li><a href="">Copia</a></li>
+                        <li><a href="">Modifica</a></li>
+                        <li><a href="">Elimina</a></li>
+                      </ul>
+                    </div>
                   </div>
+                  <!-- hours message -->
+                  <div class="hours-message">17:30</div>
                 </div>
-                <!-- hours message -->
-                <div class="hours-message">17:30</div>
+                <div class="message-chat-received">
+                  <!-- text message -->
+                  <div class="text-message">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint omnis cupiditate fugit, enim ab est
+                      minus nulla iste, aperiam ducimus ipsa, perferendis ipsum! Totam, sequi.</p>
+                  </div>
+                  <div class="interact-message">
+                    <!-- icon -->
+                    <span class="material-symbols-outlined">
+                      expand_more
+                    </span>
+                    <!-- curtain -->
+                    <div class="curtain">
+                      <ul>
+                        <li><a href="">Rispondi</a></li>
+                        <li><a href="">Inoltra</a></li>
+                        <li><a href="">Importante</a></li>
+                        <li><a href="">Copia</a></li>
+                        <li><a href="">Modifica</a></li>
+                        <li><a href="">Elimina</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- hours message -->
+                  <div class="hours-message">17:30</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- FOOTER CHAT -->
-        <div class="footer-chat debug">
-          <div id="emoji" class="icon-footer">
-            <i class="fa-regular fa-face-smile"></i>
-          </div>
-          <div id="container-input-text">
-            <input id="input-text" type="text" value="" placeholder=" Scrivi un messaggio">
-          </div>
-          <div id="record" class="icon-footer">
-            <i class="fa-solid fa-microphone"></i>
+          <!-- FOOTER CHAT -->
+          <div class="footer-chat debug">
+            <div id="emoji" class="icon-footer">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+            <div id="container-input-text">
+              <input id="input-text" type="text" value="" placeholder=" Scrivi un messaggio">
+            </div>
+            <div id="record" class="icon-footer">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <script src="./js/app.js"></script>
 </body>
 
 </html>
