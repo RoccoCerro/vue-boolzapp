@@ -150,6 +150,7 @@ img {
 
 .card {
     padding: var(--padding-card-contacts);
+    user-select: none;
 }
 
 .contacts {
