@@ -5,6 +5,7 @@ const { createApp } = Vue
       return {
         currentIndex: 0,
         newMessage: null,
+        searchContact: null,
         contacts: [
           {
             name: "Michele",
@@ -192,7 +193,7 @@ const { createApp } = Vue
 
         this.contacts[this.currentIndex].messages.push(newMsg);
         this.newMessage = "";
-        
+
         setTimeout(this.receivedMessage, 1000)
       },
       receivedMessage(){
