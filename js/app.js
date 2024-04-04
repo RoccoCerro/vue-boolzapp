@@ -6,7 +6,7 @@ const { createApp } = Vue
         currentIndex: 0,
         newMessage: null,
         searchNameContact: '',
-        contactsFilter: [],
+        // contactsFilter: [],
         contacts: [
           {
             name: "Michele",
@@ -247,7 +247,6 @@ const { createApp } = Vue
           }else{
             element.visible = false;
           }
-          console.log(element)
         });
       }
       // searchContactX(){
