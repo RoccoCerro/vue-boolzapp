@@ -216,7 +216,8 @@ img {
     border-radius: 10px;
     padding: 5px 10px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .text-message {
@@ -284,7 +285,7 @@ img {
 .curtain {
     position: absolute;
     display: none;
-    height: 150px;
+    height: 170px;
     width: 150px;
     background-color: white;
     left: -130px;
@@ -293,6 +294,7 @@ img {
     color: var(--color-icon);
     text-align: center;
     padding: 15px;
+    z-index: 1;
 }
 
 .interact-message:hover {
@@ -376,10 +378,6 @@ img {
 
     .header-chat {
         border-left: 1px solid var(--color-border-card);
-    }
-
-    .message-chat-sent, .message-chat-received {
-        min-width: 470px;
     }
 
     .text-message {
