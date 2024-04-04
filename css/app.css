@@ -296,6 +296,8 @@ img {
 }
 
 .interact-message:hover {
+    cursor: pointer;
+    user-select: none;
     .curtain {
         display: block;
     }

@@ -65,7 +65,7 @@
                 17:50
               </div>
             </li>
-            <li v-else v-for="(contact, i) in contactsFilter" class="card" @click="saveIndex(i)">
+            <li v-else v-for="(contact, i) in contactsFilter" class="card" :class="i === currentIndex ? 'active' : '' " @click="saveIndex(i)">
               <div class="card-contacts">
                 <img class="style-avatar" :src="contact.avatar" alt="">
                 <div class=info-contacts>
@@ -102,7 +102,7 @@
               <div class="container-message" :class="currentIndex === currentIndex ? 'active' : ''"> 
                 <div v-for="(msg, i) in contacts[currentIndex].messages" :class='sentOrReceived(currentIndex, i)'>
                   <div class="text-message">
-                    {{msg.message}}
+                    {{msg.message}} 
                   </div>
                   <div class="interact-message">
                     <!-- icon -->
@@ -117,7 +117,7 @@
                         <li><a href="">Importante</a></li>
                         <li><a href="">Copia</a></li>
                         <li><a href="">Modifica</a></li>
-                        <li><a href="">Elimina</a></li>
+                        <li @click="deleteMessage(i)">{{i}}Elimina</li>
                       </ul>
                     </div>
                     <!-- hours message -->

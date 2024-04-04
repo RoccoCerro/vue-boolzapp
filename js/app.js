@@ -212,20 +212,10 @@ const { createApp } = Vue
         });
 
         this.contactsFilter = contactsFilter;
+      },
+      deleteMessage(i){
+        this.contacts[this.currentIndex].messages.splice(i,1)
       }
-      // searchContact(){
-      //   this.contacts.map(element, i => {
-      //     const name = element.name;
-      //     const newArrayName = [];
-      //     const nameSearc = contacts.name.indexOf(searchNameContact)
-      //     if(nameSearc !== -1){
-      //       newArrayName.push(contacts[nameSearc]);
-      //     }
-      //     console.log(newArrayName)
-      //     console.log(nameSearc)
-      //     return newArrayName;
-      //   });
-      // }
     },
     computer:{
       
