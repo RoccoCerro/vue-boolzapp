@@ -11,7 +11,7 @@ const { createApp } = Vue
           {
             name: "Michele",
             avatar: "./img/avatar_1.jpg",
-            visible: false,
+            visible: true,
             messages: [
               {
                 date: "10/01/2020 15:30:55",
@@ -33,7 +33,7 @@ const { createApp } = Vue
           {
             name: "Fabio",
             avatar: "./img/avatar_2.jpg",
-            visible: false,
+            visible: true,
             messages: [
               {
                 date: "20/03/2020 16:30:00",
@@ -55,7 +55,7 @@ const { createApp } = Vue
           {
             name: "Samuele",
             avatar: "./img/avatar_3.jpg",
-            visible: false,
+            visible: true,
             messages: [
               {
                 date: "28/03/2020 10:10:40",
@@ -77,7 +77,7 @@ const { createApp } = Vue
           {
             name: "Alessandro B.",
             avatar: "./img/avatar_4.jpg",
-            visible: false,
+            visible: true,
             messages: [
               {
                 date: "10/01/2020 15:30:55",
@@ -94,7 +94,7 @@ const { createApp } = Vue
           {
             name: "Alessandro L.",
             avatar: "./img/avatar_5.jpg",
-            visible: false,
+            visible: true,
             messages: [
               {
                 date: "10/01/2020 15:30:55",
@@ -111,7 +111,7 @@ const { createApp } = Vue
           {
             name: "Claudia",
             avatar: "./img/avatar_6.jpg",
-            visible: false,
+            visible: true,
             messages: [
               {
                 date: "10/01/2020 15:30:55",
@@ -133,7 +133,7 @@ const { createApp } = Vue
           {
             name: "Federico",
             avatar: "./img/avatar_7.jpg",
-            visible: false,
+            visible: true,
             messages: [
               {
                 date: "10/01/2020 15:30:55",
@@ -150,7 +150,7 @@ const { createApp } = Vue
           {
             name: "Davide",
             avatar: "./img/avatar_8.jpg",
-            visible: false,
+            visible: true,
             messages: [
               {
                 date: "10/01/2020 15:30:55",
@@ -218,17 +218,15 @@ const { createApp } = Vue
       },
       lastMessage(contact){
         let msg = "";
-        if(contact.messages.length-1 > 0){
+        if(contact.messages.length-1 >= 0){
           msg = contact.messages[contact.messages.length-1].message;
         }
 
         let restMsg = "";
-        if(msg.length < 30 && msg.length > 1){
+        if(msg.length < 30 && msg.length > 0){
           restMsg = msg;
         }else if(msg.length > 30){
           restMsg = msg.slice(0,30) + "...";
-        }else{
-          restMsg = "Non ci sono messaggi";
         }
 
         return restMsg
@@ -241,9 +239,19 @@ const { createApp } = Vue
         
         let date = fullDate.slice(11,16)
         return date
-      }
+      },
+      // searchContactX(){
+      //   if(this.contacts.name.includes(searchNameContact)){
+      //     this.contacts.visible = true;
+      //   }else{
+      //     this.contacts.visible = false;
+      //   }
+      // },
     },
     computed:{
-      
+      // isVisible(i){
+      //   console.log(this.contacts[i].visible)
+      //   return this.contacts[i].visible
+      // }
     }
   }).mount('#app')

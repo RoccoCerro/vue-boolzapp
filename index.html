@@ -53,6 +53,18 @@
           </div>
           <!-- UL CONTACTS -->
           <ul class="contacts">
+            <!-- <li v-for="(contact, i) in contacts" v-if="isVisible(i) === true" class="card" :class="i === currentIndex ? 'active' : '' " @click="saveIndex(i)">
+              <div class="card-contacts">
+                <img class="style-avatar" :src="contact.avatar" alt="">
+                <div class=info-contacts>
+                  <div class="name-contacts">{{contact.name}}</div>
+                  <div class="text-contacts" >{{lastMessage(contact)}}</div>
+                </div>
+              </div>
+              <div class="hours">
+                {{lastDate(contact)}}
+              </div>
+            </li> -->
             <li v-if="contactsFilter.length === 0" v-for="(contact, i) in contacts" class="card" :class="i === currentIndex ? 'active' : '' " @click="saveIndex(i)">
               <div class="card-contacts">
                 <img class="style-avatar" :src="contact.avatar" alt="">
