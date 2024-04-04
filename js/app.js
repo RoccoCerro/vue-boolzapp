@@ -208,7 +208,7 @@ const { createApp } = Vue
       },
       searchContact() {
         const contactsFilter = this.contacts.filter(contact => {
-          return contact.name.includes(this.searchNameContact);
+          return contact.name.toLowerCase().includes(this.searchNameContact.toLowerCase());
         });
 
         this.contactsFilter = contactsFilter;
@@ -226,5 +226,8 @@ const { createApp } = Vue
       //     return newArrayName;
       //   });
       // }
+    },
+    computer:{
+      
     }
   }).mount('#app')

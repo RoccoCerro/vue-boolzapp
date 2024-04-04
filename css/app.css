@@ -151,6 +151,7 @@ img {
 .card {
     padding: var(--padding-card-contacts);
     user-select: none;
+    cursor: pointer;
 }
 
 .contacts {
@@ -342,6 +343,7 @@ img {
 .card.active, .card:hover {
     background-color: #dbdbdb;
 }
+
 /* MEDIA QUERY */
 @media (min-width: 768px){
     .sidebar {
