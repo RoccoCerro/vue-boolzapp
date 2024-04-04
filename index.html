@@ -52,7 +52,6 @@
             </div>
           </div>
           <!-- UL CONTACTS -->
-          <!-- :class="i === currentIndex ? 'active' : '' " -->
           <ul class="contacts">
             <li v-for="(contact, i) in contacts" class="card"  :class="{'not-visible':contact.visible === false, active: i === currentIndex }" @click="saveIndex(i)">
               <div class="card-contacts">

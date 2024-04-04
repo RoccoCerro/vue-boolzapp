@@ -187,7 +187,7 @@ const { createApp } = Vue
       },
       sentMessage(){
         const newMsg = {
-          date: DateTime.now(),
+          date: "16:15",
           message: this.newMessage,
           status: "sent",
         };
@@ -199,7 +199,7 @@ const { createApp } = Vue
       },
       receivedMessage(){
         const newMsg = {
-          date: DateTime.now(),
+          date: "16:15",
           message: "OK!",
           status: "received",
         };
