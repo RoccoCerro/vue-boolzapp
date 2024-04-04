@@ -214,20 +214,31 @@ const { createApp } = Vue
         this.contactsFilter = contactsFilter;
       },
       deleteMessage(i){
-        this.contacts[this.currentIndex].messages.splice(i,1)
+        this.contacts[this.currentIndex].messages.splice(i,1);
       },
       lastMessage(contact){
-        const msg = contact.messages[contact.messages.length-1].message
+        let msg = "";
+        if(contact.messages.length-1 > 0){
+          msg = contact.messages[contact.messages.length-1].message;
+        }
+
         let restMsg = "";
-        if(msg.length > 30){
+        if(msg.length < 30 && msg.length > 1){
+          restMsg = msg;
+        }else if(msg.length > 30){
           restMsg = msg.slice(0,30) + "...";
         }else{
-          restMsg = msg
+          restMsg = "Non ci sono messaggi";
         }
+
         return restMsg
       },
       lastDate(contact){
-        const fullDate = contact.messages[contact.messages.length-1].date;
+        let fullDate = "";
+        if(contact.messages.length-1 > 0){
+          fullDate = contact.messages[contact.messages.length-1].date;
+        }
+        
         let date = fullDate.slice(11,16)
         return date
       }
