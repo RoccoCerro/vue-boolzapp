@@ -53,7 +53,7 @@
           </div>
           <!-- UL CONTACTS -->
           <ul class="contacts">
-            <li v-if="contactsFilter.length === 0" v-for="(contact, i) in contacts" class="card" @click="saveIndex(i)">
+            <li v-if="contactsFilter.length === 0" v-for="(contact, i) in contacts" class="card" :class="i === currentIndex ? 'active' : '' " @click="saveIndex(i)">
               <div class="card-contacts">
                 <img class="style-avatar" :src="contact.avatar" alt="">
                 <div class=info-contacts>
@@ -84,9 +84,9 @@
           <!-- HEADER CHAT -->
           <div class="header-chat">
             <div class="card-chat">
-              <img class="style-avatar" src="./img/avatar_6.jpg" alt="">
+              <img class="style-avatar" :src="contacts[currentIndex].avatar" alt="">
               <div class=info-chat>
-                <div class="name-contacts">Claudia</div>
+                <div class="name-contacts">{{contacts[currentIndex].name}}</div>
                 <div class="text-contacts">Ultimo accesso oggi alle 16:26</div>
               </div>
             </div>
@@ -99,7 +99,7 @@
           <!-- MAIN CHAT -->
           <div class="main-chat">
             <div class="container-chat">
-              <div class="container-message" :class="currentIndex === currentIndex ? 'active' : ''">
+              <div class="container-message" :class="currentIndex === currentIndex ? 'active' : ''"> 
                 <div v-for="(msg, i) in contacts[currentIndex].messages" :class='sentOrReceived(currentIndex, i)'>
                   <div class="text-message">
                     {{msg.message}}
@@ -121,7 +121,7 @@
                       </ul>
                     </div>
                     <!-- hours message -->
-                    <div class="hours-message">17:30</div>
+                    <div class="hours-message">{{msg.date.slice(11,16)}}</div>
                   </div>
                 </div>
               </div>

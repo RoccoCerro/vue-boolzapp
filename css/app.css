@@ -335,8 +335,12 @@ img {
     font-size: 20px;
 }
 
-.active {
+.container-message.active {
     display: flex;
+}
+
+.card.active, .card:hover {
+    background-color: #dbdbdb;
 }
 /* MEDIA QUERY */
 @media (min-width: 768px){
