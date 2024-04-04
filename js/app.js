@@ -215,9 +215,19 @@ const { createApp } = Vue
       },
       deleteMessage(i){
         this.contacts[this.currentIndex].messages.splice(i,1)
+      },
+      lastMessage(contact){
+        const msg = contact.messages[contact.messages.length-1].message
+        let restMsg = "";
+        if(msg.length > 30){
+          restMsg = msg.slice(0,30) + "...";
+        }else{
+          restMsg = msg
+        }
+        return restMsg
       }
     },
-    computer:{
+    computed:{
       
     }
   }).mount('#app')

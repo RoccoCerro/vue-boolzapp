@@ -58,7 +58,8 @@
                 <img class="style-avatar" :src="contact.avatar" alt="">
                 <div class=info-contacts>
                   <div class="name-contacts">{{contact.name}}</div>
-                  <div class="text-contacts">Lorem ipsum</div>
+                  <div class="text-contacts" >{{lastMessage(contact)}}</div>
+                  <!-- <div class="text-contacts" >{{contact.messages[contact.messages.length-1].message}}</div> -->
                 </div>
               </div>
               <div class="hours">
@@ -117,6 +118,7 @@
                         <li><a href="">Importante</a></li>
                         <li><a href="">Copia</a></li>
                         <li><a href="">Modifica</a></li>
+                        <li>Info</li>
                         <li @click="deleteMessage(i)">{{i}}Elimina</li>
                       </ul>
                     </div>
