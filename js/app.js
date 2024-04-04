@@ -222,14 +222,11 @@ const { createApp } = Vue
           msg = contact.messages[contact.messages.length-1].message;
         }
 
-        let restMsg = "";
-        if(msg.length < 30 && msg.length > 0){
-          restMsg = msg;
-        }else if(msg.length > 30){
-          restMsg = msg.slice(0,30) + "...";
+        if(msg.length > 30){
+          msg = msg.slice(0,30) + "...";
         }
 
-        return restMsg
+        return msg
       },
       lastDate(contact){
         let fullDate = "";

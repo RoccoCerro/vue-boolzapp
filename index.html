@@ -54,7 +54,7 @@
           <!-- UL CONTACTS -->
           <!-- :class="i === currentIndex ? 'active' : '' " -->
           <ul class="contacts">
-            <li v-for="(contact, i) in contacts" class="card"  :class="[contact.visible === false ? 'not-visible':'', i === currentIndex ? 'active' : '' ]" @click="saveIndex(i)">
+            <li v-for="(contact, i) in contacts" class="card"  :class="{'not-visible':contact.visible === false, active: i === currentIndex }" @click="saveIndex(i)">
               <div class="card-contacts">
                 <img class="style-avatar" :src="contact.avatar" alt="">
                 <div class=info-contacts>
