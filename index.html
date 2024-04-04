@@ -63,7 +63,7 @@
                 </div>
               </div>
               <div class="hours">
-                17:50
+                {{lastDate(contact)}}
               </div>
             </li>
             <li v-else v-for="(contact, i) in contactsFilter" class="card" :class="i === currentIndex ? 'active' : '' " @click="saveIndex(i)">
@@ -71,11 +71,11 @@
                 <img class="style-avatar" :src="contact.avatar" alt="">
                 <div class=info-contacts>
                   <div class="name-contacts">{{contact.name}}</div>
-                  <div class="text-contacts">Lorem ipsum</div>
+                  <div class="text-contacts">{{lastMessage(contact)}}</div>
                 </div>
               </div>
               <div class="hours">
-                16:15
+                {{lastDate(contact)}}
               </div>
             </li>
           </ul>

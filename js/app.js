@@ -225,6 +225,11 @@ const { createApp } = Vue
           restMsg = msg
         }
         return restMsg
+      },
+      lastDate(contact){
+        const fullDate = contact.messages[contact.messages.length-1].date;
+        let date = fullDate.slice(11,16)
+        return date
       }
     },
     computed:{
