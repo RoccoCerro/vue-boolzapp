@@ -187,7 +187,7 @@ const { createApp } = Vue
       },
       sentMessage(){
         const newMsg = {
-          date: "10/01/2020 15:51:00",
+          date: DateTime.now(),
           message: this.newMessage,
           status: "sent",
         };
@@ -199,20 +199,20 @@ const { createApp } = Vue
       },
       receivedMessage(){
         const newMsg = {
-          date: "10/01/2020 15:51:00",
+          date: DateTime.now(),
           message: "OK!",
           status: "received",
         };
 
         this.contacts[this.currentIndex].messages.push(newMsg);
       },
-      searchContact() {
-        const contactsFilter = this.contacts.filter(contact => {
-          return contact.name.toLowerCase().includes(this.searchNameContact.toLowerCase());
-        });
+      // searchContact() {
+      //   const contactsFilter = this.contacts.filter(contact => {
+      //     return contact.name.toLowerCase().includes(this.searchNameContact.toLowerCase());
+      //   });
 
-        this.contactsFilter = contactsFilter;
-      },
+      //   this.contactsFilter = contactsFilter;
+      // },
       deleteMessage(i){
         this.contacts[this.currentIndex].messages.splice(i,1);
       },
@@ -240,6 +240,16 @@ const { createApp } = Vue
         let date = fullDate.slice(11,16)
         return date
       },
+      searchContact(){
+        this.contacts.forEach(element => {
+          if(element.name.toLowerCase().includes(this.searchNameContact.toLowerCase())){
+            element.visible = true;
+          }else{
+            element.visible = false;
+          }
+          console.log(element)
+        });
+      }
       // searchContactX(){
       //   if(this.contacts.name.includes(searchNameContact)){
       //     this.contacts.visible = true;
@@ -252,6 +262,16 @@ const { createApp } = Vue
       // isVisible(i){
       //   console.log(this.contacts[i].visible)
       //   return this.contacts[i].visible
+      // }
+
+      // searchContactX: function(){
+      //   return this.contacts.name.includes(searchNameContact) ? 'true' : 'false'
+      // }
+
+      // isNotVisible:function(){
+      //   if(this.contacts.visible === false){
+      //     return "not-visible"
+      //   }
       // }
     }
   }).mount('#app')

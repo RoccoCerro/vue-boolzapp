@@ -492,6 +492,10 @@ img {
     .footer-chat {
         border-bottom-right-radius: 0px;
     }
+
+    .not-visible{
+        display: none;
+    }
 }
 
 /* DEBUG */
