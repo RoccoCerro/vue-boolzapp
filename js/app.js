@@ -192,20 +192,29 @@ const { createApp } = Vue
           status: "sent",
         };
 
-        this.contacts[this.currentIndex].messages.push(newMsg);
+        const msg = this.contacts[this.currentIndex].messages
+        msg.push(newMsg);
         this.newMessage = "";
 
-        setTimeout(this.receivedMessage, 1000)
-      },
-      receivedMessage(){
-        const newMsg = {
-          date: "16:15",
-          message: "OK!",
-          status: "received",
-        };
+        setTimeout(() => {
+          const newMsgReceived = {
+            date: "16:15",
+            message: "OK!",
+            status: "received",
+          };
 
-        this.contacts[this.currentIndex].messages.push(newMsg);
+          msg.push(newMsgReceived)
+        }, 1000)
       },
+      // receivedMessage(){
+      //   const newMsg = {
+      //     date: "16:15",
+      //     message: "OK!",
+      //     status: "received",
+      //   };
+
+      //   this.contacts[this.currentIndex].messages.push(newMsg);
+      // },
       // searchContact() {
       //   const contactsFilter = this.contacts.filter(contact => {
       //     return contact.name.toLowerCase().includes(this.searchNameContact.toLowerCase());
