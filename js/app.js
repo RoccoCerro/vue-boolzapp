@@ -230,7 +230,7 @@ const { createApp } = Vue
       },
       lastDate(contact){
         let fullDate = "";
-        if(contact.messages.length-1 > 0){
+        if(contact.messages.length-1 >= 0){
           fullDate = contact.messages[contact.messages.length-1].date;
         }
         
