@@ -1,3 +1,18 @@
+const dateTime = luxon.DateTime;
+console.log("console.log datetime",dateTime)
+const dt = dateTime.now();
+console.log("console.log datetime.now()",dt);
+console.log(dt.c.hour)
+console.log(dt.c.minute)
+
+// let hour = dt.c.hour.toString();
+// let minute = dt.c.minute;
+
+const timeFormat = dt.toFormat("dd/LL/y hh:mm:ss")
+console.log(timeFormat)
+
+
+
 const { createApp } = Vue
 
   createApp({
@@ -187,7 +202,7 @@ const { createApp } = Vue
       },
       sentMessage(){
         const newMsg = {
-          date: "16:15",
+          date: timeFormat,
           message: this.newMessage,
           status: "sent",
         };
@@ -198,7 +213,7 @@ const { createApp } = Vue
 
         setTimeout(() => {
           const newMsgReceived = {
-            date: "16:15",
+            date: timeFormat,
             message: "OK!",
             status: "received",
           };
